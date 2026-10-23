@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CodeLab</title>
+
+    <style>
+      :root {
+        --navy: #121f3a;
+        --blue: #2f5bea;
+        --yellow: #ffb400;
+        --card-bg: #eef2ff;
+        --text: #121f3a;
+      }
+
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        font-family: Arial, Helvetica, sans-serif;
+        color: var(--text);
+      }
+
+      /* 7.1 Navbar: display flex, logo left, links in the middle, button right */
+      .navbar {
+        display: flex;
+        justify-content: space-between; /* pushes logo and button to the edges */
+        align-items: center;            /* centres everything up and down */
+        flex-wrap: wrap;
+        gap: 10px;
+        background: var(--navy);
+        color: white;
+        padding: 16px 28px;
+      }
+
+      .logo {
+        font-size: 1.5rem;
+        font-weight: bold;
+      }
+
+      .nav-links {
+        display: flex;
+        gap: 24px;
+      }
+
+      .nav-links a {
+        color: white;
+        text-decoration: none;
+      }
+
+      .nav-links a:hover {
+        text-decoration: underline;
+      }
+
+      .btn {
+        background: var(--yellow);
+        color: black;
+        border: none;
+        padding: 9px 18px;
+        border-radius: 8px;
+        font-weight: bold;
+        font-size: 0.9rem;
+        cursor: pointer;
+      }
+
+      /* 7.2 Banner: centre the text with flex-direction, justify-content, align-items */
+      .banner {
+        display: flex;
+        flex-direction: column;   /* stack heading, text and button */
+        justify-content: center;  /* centre up and down */
+        align-items: center;      /* centre left and right */
+        gap: 12px;
+        min-height: 310px;
+        background: var(--blue);
+        color: white;
+        text-align: center;
+        padding: 30px 20px;
+      }
+
+      .banner h1 {
+        font-size: 2.2rem;
+      }
+
+      /* 7.3 Row of cards: wrap to the next line when there is no space */
+      .cards {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+        padding: 28px;
+      }
+
+      .card {
+        flex: 1 1 200px;   /* grow, shrink, start at 200px wide */
+        background: var(--card-bg);
+        padding: 22px 16px;
+        border-radius: 12px;
+        text-align: center;
+      }
+
+      .card h3 {
+        font-size: 1.2rem;
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- 7.4 Navbar and banner together = landing page -->
+    <nav class="navbar">
+      <div class="logo">CodeLab</div>
+
+      <div class="nav-links">
+        <a href="#">Home</a>
+        <a href="#">Courses</a>
+        <a href="#">Contact</a>
+      </div>
+
+      <button class="btn">Sign up</button>
+    </nav>
+
+    <header class="banner">
+      <h1>Learn Web Development</h1>
+      <p>Start from zero. Build real projects.</p>
+      <button class="btn">Get started</button>
+    </header>
+
+    <main class="cards">
+      <div class="card">
+        <h3>HTML</h3>
+        <p>Build the structure</p>
+      </div>
+      <div class="card">
+        <h3>CSS</h3>
+        <p>Make it beautiful</p>
+      </div>
+      <div class="card">
+        <h3>JavaScript</h3>
+        <p>Make it smart</p>
+      </div>
+      <div class="card">
+        <h3>Git</h3>
+        <p>Save your work</p>
+      </div>
+    </main>
+  </body>
+</html>

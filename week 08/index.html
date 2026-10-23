@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Dashboard</title>
+
+    <style>
+      :root {
+        --navy: #121f3a;
+        --page-bg: #eef2ff;
+        --side-bg: #dbe5ff;
+        --box-bg: #ffffff;
+        --radius: 12px;
+        --gap: 12px;
+      }
+
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        font-family: Arial, Helvetica, sans-serif;
+        background: var(--page-bg);
+        padding: var(--gap);
+      }
+
+      /* 8.1 Page grid: display grid, columns, fr unit and gap */
+      .page {
+        display: grid;
+        grid-template-columns: 200px 1fr; /* side = 200px, main = the rest (1fr) */
+        gap: var(--gap);
+
+        /* 8.3 Named areas */
+        grid-template-areas:
+          "head head"
+          "side main"
+          "foot foot";
+      }
+
+      .head {
+        grid-area: head;
+        background: var(--navy);
+        color: white;
+        padding: 16px;
+        border-radius: var(--radius);
+        min-height: 160px;
+      }
+
+      .side {
+        grid-area: side;
+        background: var(--side-bg);
+        padding: 16px;
+        border-radius: var(--radius);
+      }
+
+      .side ul {
+        margin-top: 8px;
+        padding-left: 22px;
+        line-height: 1.6;
+      }
+
+      .main {
+        grid-area: main;
+
+        /* 8.2 Boxes re-arrange by themselves */
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        gap: var(--gap);
+        align-content: start;
+      }
+
+      .foot {
+        grid-area: foot;
+        background: var(--navy);
+        color: white;
+        text-align: center;
+        padding: 12px;
+        border-radius: var(--radius);
+        min-height: 140px;
+      }
+
+      /* 8.4 Flexbox inside each box: icon and text side by side */
+      .box {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        background: var(--box-bg);
+        padding: 18px;
+        border-radius: var(--radius);
+      }
+
+      .icon {
+        font-size: 2.2rem;
+      }
+
+      .box strong {
+        display: block;
+        font-size: 1.1rem;
+      }
+
+      /* Small screens: stack everything in one column */
+      @media (max-width: 600px) {
+        .page {
+          grid-template-columns: 1fr;
+          grid-template-areas:
+            "head"
+            "side"
+            "main"
+            "foot";
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="page">
+      <header class="head">
+        <h1>My Dashboard</h1>
+      </header>
+
+      <nav class="side">
+        <h2>Menu</h2>
+        <ul>
+          <li>Home</li>
+          <li>Reports</li>
+          <li>Settings</li>
+        </ul>
+      </nav>
+
+      <main class="main">
+        <div class="box">
+          <span class="icon">👤</span>
+          <div><strong>120</strong>Users</div>
+        </div>
+        <div class="box">
+          <span class="icon">💰</span>
+          <div><strong>Rs 45k</strong>Sales</div>
+        </div>
+        <div class="box">
+          <span class="icon">📦</span>
+          <div><strong>36</strong>Orders</div>
+        </div>
+        <div class="box">
+          <span class="icon">⭐</span>
+          <div><strong>4.8</strong>Rating</div>
+        </div>
+        <div class="box">
+          <span class="icon">💬</span>
+          <div><strong>18</strong>Messages</div>
+        </div>
+        <div class="box">
+          <span class="icon">✅</span>
+          <div><strong>92%</strong>Done</div>
+        </div>
+      </main>
+
+      <footer class="foot">
+        <p>Made with CSS Grid</p>
+      </footer>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <!-- Needed for responsive design on phones -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="TravelEase - plan your next trip in minutes">
+    <title>TravelEase</title>
+
+    <style>
+      :root {
+        --navy: #121f3a;
+        --blue: #2f5bea;
+        --card-bg: #eef2ff;
+        --img-bg: #9db4f5;
+        --text: #121f3a;
+      }
+
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      /* ================================
+         9.1 MOBILE LAYOUT FIRST (default)
+         ================================ */
+      body {
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 1rem;          /* 9.2 rem units */
+        color: var(--text);
+      }
+
+      /* 9.3 Flexbox for the navbar */
+      .navbar {
+        display: flex;
+        flex-direction: column;   /* stacked on mobile */
+        align-items: center;
+        gap: 6px;
+        background: var(--navy);
+        color: white;
+        padding: 0.8rem 1rem;
+      }
+
+      .logo {
+        font-size: 1.3rem;
+        font-weight: bold;
+      }
+
+      .nav-links {
+        display: flex;
+        gap: 1rem;
+      }
+
+      .nav-links a {
+        color: white;
+        text-decoration: none;
+        font-size: 0.9rem;
+      }
+
+      /* Hero banner */
+      .hero {
+        background: var(--blue);
+        color: white;
+        text-align: center;
+        padding: 1.5rem 1rem 2rem;
+      }
+
+      .hero h1 {
+        font-size: 1.4rem;
+        margin-bottom: 0.2rem;
+      }
+
+      .hero p {
+        font-size: 0.85rem;
+        margin-bottom: 0.9rem;
+      }
+
+      /* 9.2 Images fit their box with max-width: 100% */
+      .hero img {
+        display: block;
+        max-width: 100%;
+        width: 100%;
+        height: 9rem;
+        margin: 0 auto;
+        object-fit: cover;
+        border-radius: 12px;
+        background: var(--img-bg);
+        color: var(--text);
+      }
+
+      /* 9.3 Grid for the page sections (cards) */
+      .features {
+        display: grid;
+        grid-template-columns: 1fr;   /* 1 column on mobile */
+        gap: 0.8rem;
+        padding: 1rem;
+      }
+
+      .card {
+        background: var(--card-bg);
+        padding: 0.9rem;
+        border-radius: 12px;
+        text-align: center;
+      }
+
+      .card h3 {
+        font-size: 1rem;
+      }
+
+      .card p {
+        font-size: 0.9rem;
+      }
+
+      /* ================================
+         9.1 TABLET: 768px and up
+         ================================ */
+      @media (min-width: 768px) {
+        .navbar {
+          flex-direction: row;
+          justify-content: space-between;  /* logo left, links right */
+          padding: 0.9rem 2rem;
+        }
+
+        .hero {
+          padding: 2rem 2rem 2.5rem;
+        }
+
+        .hero h1 {
+          font-size: 1.9rem;
+        }
+
+        .hero p {
+          font-size: 0.95rem;
+        }
+
+        .hero img {
+          width: 60%;          /* smaller picture on bigger screens */
+          height: 12rem;
+        }
+
+        .features {
+          grid-template-columns: repeat(3, 1fr);  /* 3 cards in a row */
+          gap: 1rem;
+          padding: 1.5rem 2rem;
+        }
+      }
+
+      /* ================================
+         9.1 LAPTOP: 1024px and up
+         ================================ */
+      @media (min-width: 1024px) {
+        .navbar {
+          padding: 1rem 4rem;
+        }
+
+        .hero h1 {
+          font-size: 2.3rem;
+        }
+
+        .hero img {
+          width: 50%;
+          height: 15rem;
+        }
+
+        .features {
+          max-width: 1000px;
+          margin: 0 auto;
+          padding: 2rem 1rem;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <nav class="navbar">
+      <div class="logo">TravelEase</div>
+      <div class="nav-links">
+        <a href="#">Home</a>
+        <a href="#">Trips</a>
+        <a href="#">Contact</a>
+      </div>
+    </nav>
+
+    <header class="hero">
+      <h1>Plan your next trip in minutes</h1>
+      <p>Simple, cheap and fun travel plans.</p>
+      <img src="image.png" alt="img/hero.jpg">
+    </header>
+
+    <main class="features">
+      <div class="card">
+        <h3>Easy Booking</h3>
+        <p>Book in 3 clicks.</p>
+      </div>
+      <div class="card">
+        <h3>Best Prices</h3>
+        <p>We compare for you.</p>
+      </div>
+      <div class="card">
+        <h3>24x7 Help</h3>
+        <p>We are always here.</p>
+      </div>
+    </main>
+  </body>
+</html>

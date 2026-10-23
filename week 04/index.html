@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- 4.4 Meta tags and favicon -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Coding Club events and student registration page">
+    <meta name="author" content="Riya">
+    <meta name="keywords" content="coding club, events, registration, HTML">
+    <title>Coding Club</title>
+    <!-- Favicon (emoji icon, no extra file needed) -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💻</text></svg>">
+  </head>
+
+  <body>
+    <!-- Menu -->
+    <nav>
+      <a href="#events">Events</a> |
+      <a href="#register">Register</a>
+    </nav>
+
+    <h1>Coding Club</h1>
+
+    <!-- 4.3 Events table: heading row, body rows, footer row -->
+    <section id="events">
+      <h2>Upcoming Events</h2>
+      <table border="1">
+        <caption>Club Events</caption>
+        <thead>
+          <tr>
+            <th>Event</th>
+            <th>Date</th>
+            <th>Venue</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>HTML Workshop</td>
+            <td>12 Nov</td>
+            <td>Lab 1</td>
+          </tr>
+          <tr>
+            <td>Hackathon</td>
+            <td>20 Nov</td>
+            <td>Seminar Hall</td>
+          </tr>
+        </tbody>
+        <tfoot>
+          <tr>
+            <td colspan="3">Total events: 2</td>
+          </tr>
+        </tfoot>
+      </table>
+    </section>
+
+    <!-- 4.1 and 4.2 Registration form -->
+    <section id="register">
+      <h2>Register</h2>
+      <form action="#" method="post">
+
+        <p>
+          <label for="name">Name:</label>
+          <input type="text" id="name" name="name" placeholder="Your name" required>
+        </p>
+
+        <p>
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email" required>
+        </p>
+
+        <p>
+          <label for="password">Password:</label>
+          <input type="password" id="password" name="password" required>
+        </p>
+
+        <p>
+          <label for="dob">Date of birth:</label>
+          <input type="date" id="dob" name="dob">
+        </p>
+
+        <p>
+          <label for="phone">Phone:</label>
+          <input type="tel" id="phone" name="phone">
+        </p>
+
+        <!-- Radio buttons: same name, so only one can be picked -->
+        <p>
+          Gender:
+          <input type="radio" id="male" name="gender" value="male">
+          <label for="male">Male</label>
+          <input type="radio" id="female" name="gender" value="female">
+          <label for="female">Female</label>
+        </p>
+
+        <!-- Checkboxes: many can be picked -->
+        <p>
+          Interests:
+          <input type="checkbox" id="web" name="interest" value="web">
+          <label for="web">Web</label>
+          <input type="checkbox" id="dsa" name="interest" value="dsa">
+          <label for="dsa">DSA</label>
+        </p>
+
+        <!-- Dropdown -->
+        <p>
+          <label for="branch">Branch:</label>
+          <select id="branch" name="branch">
+            <option value="bca">BCA</option>
+            <option value="btech">BTech</option>
+            <option value="bsc">BSc</option>
+          </select>
+        </p>
+
+        <!-- Message box -->
+        <p>
+          <label for="why">Why do you want to join?</label><br>
+          <textarea id="why" name="why" rows="3" cols="30"></textarea>
+        </p>
+
+        <button type="submit">Register</button>
+      </form>
+    </section>
+  </body>
+</html>
